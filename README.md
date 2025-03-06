@@ -1,4 +1,4 @@
-AI-Driven 3D Iteration Engine
+# AI-Driven 3D Iteration Engine
 
 Goal: Create a self-optimizing design loop where open-source AI tools, Hunyuan3D, and parametric modeling collaborate iteratively. Users can intervene at fixation grid points or let the system auto-revise until convergence.
 Core Loop Architecture
@@ -7,7 +7,7 @@ Core Loop Architecture
 Key Innovation: A dual-path workflow ensures GPU-heavy 3D generation (Hunyuan3D) and CPU-light vector tracing (SVG/OpenSCAD) run in parallel, merging only for final validation. Fixation grids anchor geometric relationships between iterations, avoiding drift.
 1. Iteration Cycle Overview
 
-Step 1: Open-Source AI Graphics Engine (Stable Diffusion)
+# Step 1: Open-Source AI Graphics Engine (Stable Diffusion)
 
     Input: User prompt (e.g., "modern house with glass facade").
 
@@ -15,7 +15,7 @@ Step 1: Open-Source AI Graphics Engine (Stable Diffusion)
 
     Grid Rules: Critical features (e.g., window corners, roof apex) snap to grid lines for cross-format consistency.
 
-Step 2: Dual-Path Processing
+## Step 2: Dual-Path Processing
 
     Path A (GPU-Heavy):
 
@@ -29,7 +29,7 @@ Step 2: Dual-Path Processing
 
         OpenSCAD Parametrization: Auto-generate code with grid-aligned variables.
 
-Step 3: Blender Fusion & Feedback
+## Step 3: Blender Fusion & Feedback
 
     Merge Paths: Overlay Hunyuan3D mesh with OpenSCAD vector outlines in Blender.
 
@@ -47,7 +47,7 @@ Step 3: Blender Fusion & Feedback
         )  
         return revised_sketch  
 
-2. Fixation Grid: The Iteration Anchor
+# 2. Fixation Grid: The Iteration Anchor
 
     Purpose: Maintain spatial relationships across AI ↔ 3D ↔ Vector ↔ Pixel transitions.
 
@@ -63,7 +63,7 @@ Step 3: Blender Fusion & Feedback
 
             Stable Diffusion uses grid as a ControlNet-like conditioning layer.
 
-3. User Intervention Points
+# 3. User Intervention Points
 
 A. Direct Modeling: Export Hunyuan3D/OpenSCAD outputs to Blender for manual tweaking.
 B. Grid Editing: Adjust fixation grid parameters (e.g., stretch X-axis spacing) to steer AI revisions.
@@ -76,12 +76,12 @@ C. Loop Exit: Export manufacturing-ready files (STEP from OpenSCAD, STL from Hun
 
     Flexibility: Users toggle between fully automated loops and hands-on CAD work.
 
-Next: We’ll explore  scripting tactics to sync Hunyuan3D’s mesh outputs with OpenSCAD’s parametric grid system.
+### Next: We’ll explore  scripting tactics to sync Hunyuan3D’s mesh outputs with OpenSCAD’s parametric grid system.
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Hunyuan3D-to-OpenSCAD Slicing Workflow
+# Hunyuan3D-to-OpenSCAD Slicing Workflow
 
 Objective: Use OpenSCAD to extract 2D plans/sections from Hunyuan3D’s 3D meshes, then refine them via AI sketching while preserving parametric relationships.
 1. Slicing Hunyuan3D Models in OpenSCAD
